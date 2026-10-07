@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de Desenvolvimento de Solução Web - Centro Educa Mais Dom Ungarelli</title>
+    <style>
+        :root {
+            --primary-dark: #1e3a8a; /* Azul formal institucional */
+            --bg-color: #f8fafc;
+            --text-color: #111827;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Times New Roman', Times, serif, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: white;
+            padding: 4rem 3.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Estilização acadêmica conforme ABNT do documento */
+        h1, h2, h3, h4 {
+            font-family: Arial, sans-serif;
+            color: var(--primary-dark);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 { font-size: 1.5rem; text-align: center; text-transform: uppercase; }
+        h2 { font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem; margin-top: 2.5rem; }
+        h3 { font-size: 1.1rem; }
+
+        p, li {
+            text-align: justify;
+            text-indent: 1.25rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            padding-left: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.85rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: #dbeafe;
+            color: #1e3a8a;
+        }
+
+        .cover-page, .title-page {
+            text-align: center;
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            page-break-after: always;
+            padding: 2rem 0;
+        }
+
+        .nav-doc {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: #e2e8f0;
+            padding: 0.75rem;
+            border-radius: 6px;
+        }
+
+        .nav-doc button {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            color: var(--primary-dark);
+        }
+
+        .nav-doc button:hover, .nav-doc button.active {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        .section-block {
+            display: none;
+        }
+
+        .section-block.active {
+            display: block;
+        }
+
+        .page-break {
+            margin: 3rem 0;
+            border-top: 2px dashed var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navegação rápida entre visualização contínua ou seções -->
+        <div class="nav-doc">
+            <button class="active" onclick="mudarSecao('tudo')">Visualizar Projeto Completo</button>
+            <button onclick="mudarSecao('capa')">Capa & Folha de Rosto</button>
+            <button onclick="mudarSecao('texto')">Desenvolvimento Textual Expandido</button>
+        </div>
+
+        <!-- SEÇÃO: CAPA E FOLHA DE ROSTO -->
+        <div id="sec-capa" class="section-block active">
+            <div class="cover-page">
+                <div>
+                    <h2>CENTRO EDUCA MAIS DOM UNGARELLI</h2>
+                    <h3>CURSO TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS</h3>
+                </div>
+                <div style="margin: 4rem 0;">
+                    <h1>PROJETO DE DESENVOLVIMENTO DE UMA SOLUÇÃO WEB</h1>
+                    <h3>Sistema de Gerenciamento de Achados e Perdidos no Âmbito Escolar</h3>
+                </div>
+                <div>
+                    <p style="text-indent: 0; text-align: center;"><strong>ESTADO:</strong> Maranhão | <strong>CIDADE:</strong> Pinheiro</p>
+                    <p style="text-indent: 0; text-align: center;"><strong>ΑΝΟ:</strong> 2026</p>
+                </div>
+            </div>
+
+            <div class="page-break"></div>
+
+            <div class="title-page">
+                <div>
+                    <p style="text-indent: 0; text-align: center;"><strong>ESTUDANTES:</strong><br>Daianny Rackelly, Dandara, Sarah Lorrany, Nayane, Rerisson, Ana Vitória Ribeiro</p>
+                </div>
+                <div style="margin: 2rem 0;">
+                    <h1>SISTEMA DE GERENCIAMENTO DE ACHADOS E PERDIDOS ESCOLAR</h1>
+                </div>
+                <div style="max-width: 580px; margin-left: auto; text-align: justify;">
+                    <p>Projeto apresentado ao Centro Educa Mais Dom Ungarelli, como requisito parcial para a conclusão da disciplina de Desenvolvimento de Soluções Web, sob a orientação do corpo docente da instituição.</p>
+                    <p><strong>Professor(a):</strong> Maycom Michael</p>
+                </div>
+                <div>
+                    <p style="text-indent: 0; text-align: center;"><strong>ESTADO:</strong> Maranhão | <strong>CIDADE:</strong> Pinheiro</p>
+                    <p style="text-indent: 0; text-align: center;"><strong>ΑΝΟ:</strong> 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO: CORPO DO TRABALHO EXPANDIDO -->
+        <div id="sec-texto" class="section-block active">
+            
+            <h2>SUMÁRIO</h2>
+            <p style="text-indent: 0;">1 INTRODUÇÃO<br>
+            2 PROBLEMA DE PESQUISA<br>
+            3 JUSTIFICATIVA<br>
+            4 OBJETIVOS<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;4.1 Objetivo geral<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;4.2 Objetivos específicos<br>
+            5 FUNDAMENTAÇÃO TEÓRICA<br>
+            6 METODOLOGIA<br>
+            7 ANÁLISE E LEVANTAMENTO DE REQUISITOS<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;7.1 Público-alvo<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;7.2 Requisitos funcionais<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;7.3 Requisitos não funcionais<br>
+            8 MODELAGEM E PROTOTIPAÇÃO<br>
+            9 DESENVOLVIMENTO DA SOLUÇÃO WEB<br>
+            10 TESTES E RESULTADOS<br>
+            11 CONSIDERAÇÕES FINAIS<br>
+            REFERÊNCIAS</p>
+
+            <h2>1 INTRODUÇÃO</h2>
+            <p>O presente projeto consiste no planejamento, concepção e desenvolvimento detalhado de uma solução web moderna e intuitiva voltada especificamente para a gestão e o controle automatizado de objetos achados e perdidos no âmbito do Centro Educa Mais Dom Ungarelli. No cotidiano dinâmico de uma instituição de ensino de tempo integral, o fluxo constante de estudantes, docentes e colaboradores propicia o esquecimento, a perda ou o extravio frequente de pertences pessoais de grande relevância, como materiais escolares, dispositivos eletrônicos, uniformes, garrafas térmicas e acessórios diversos.</p>
+            <p>O problema central identificado ao longo da vivência acadêmica reside na evidente ineficiência, na desorganização e na falta de transparência que caracterizam os métodos tradicionais de controle até então empregados na escola. Atualmente, o processo baseia-se em locais físicos improvisados — como caixas em cantos de salas, armários na secretaria ou balcões de atendimento — e em avisos verbais informais ou murais de recados que rapidamente se tornam obsoletos. Essa metodologia arcaica dificulta drasticamente a localização e a devolução dos itens, gerando acúmulo de objetos sem identificação, transtornos para os discentes e sobrecarga operacional para a equipe administrativa.</p>
+            <p>Diante desse cenário desafiador, propõe-se a construção de um sistema web centralizado, seguro e de fácil acesso, capaz de catalogar digitalmente cada objeto encontrado, fornecendo descrições detalhadas, fotografias ilustrativas, datas e locais de recolhimento. A relevância desta solução tecnológica reside na otimização e agilização dos processos de restituição, promovendo a responsabilidade coletiva, a integridade do patrimônio discente e a modernização digital dos serviços oferecidos no ambiente escolar.</p>
+
+            <h2>2 PROBLEMA DE PESQUISA</h2>
+            <p>Tendo em vista as barreiras enfrentadas pela comunidade acadêmica na recuperação de pertences extraviados, formula-se o seguinte questionamento central: De que maneira o desenvolvimento e a implementação de uma solução web integrada e responsiva podem contribuir de forma efetiva para otimizar o gerenciamento, o acompanhamento transparente e a recuperação ágil de objetos perdidos no Centro Educa Mais Dom Ungarelli?</p>
+
+            <h2>3 JUSTIFICATIVA</h2>
+            <p>A elaboração e futura implementação deste projeto justificam-se primordialmente pela urgência de sanar as recorrentes dificuldades logísticas e organizacionais relacionadas ao armazenamento temporário e à restituição de pertences no ambiente escolar. A perda de materiais didáticos, cadernos, casacos e acessórios causa prejuízos financeiros e emocionais aos estudantes e suas famílias, além de gerar desgaste no atendimento prestado pela secretaria da instituição.</p>
+            <p>Os principais beneficiados diretos com a solução serão os próprios alunos, que contarão com uma ferramenta digital autônoma para realizar buscas rápidas por seus pertences, e os funcionários da secretaria, que serão desonerados de tarefas manuais repetitivas de triagem. A escolha por desenvolver uma aplicação baseada em tecnologias web fundamenta-se na ampla acessibilidade proporcionada por navegadores em smartphones e computadores, permitindo que a comunidade interaja com a plataforma de qualquer lugar e a qualquer momento, garantindo transparência, rastreabilidade e eficiência operacional incomparáveis aos métodos convencionais.</p>
+
+            <h2>4 OBJETIVOS</h2>
+            <h3>4.1 Objetivo geral</h3>
+            <p>Desenvolver o projeto conceitual, arquitetural e funcional de uma solução web robusta voltada para auxiliar no gerenciamento inteligente, no acompanhamento em tempo real e no controle rigoroso de objetos achados e perdidos no Centro Educa Mais Dom Ungarelli, proporcionando uma experiência otimizada para toda a comunidade escolar.</p>
+            <h3>4.2 Objetivos específicos</h3>
+            <ul>
+                <li>Investigar e mapear detalhadamente as principais necessidades operacionais, dores e expectativas dos usuários que frequentam o ambiente escolar;</li>
+                <li>Levantar, especificar e documentar com precisão os requisitos funcionais e não funcionais essenciais para o correto funcionamento da aplicação web;</li>
+                <li>Elaborar a arquitetura de software, diagramas estruturais e protótipos de alta fidelidade (wireframes) para validação visual e interativa da interface;</li>
+                <li>Modelar o banco de dados relacional de forma a garantir a integridade, consistência e segurança das informações armazenadas sobre os itens e usuários;</li>
+                <li>Descrever minuciosamente o processo de desenvolvimento front-end e back-end, detalhando as linguagens, frameworks e boas práticas de programação adotadas;</li>
+                <li>Planejar e executar cenários rigorosos de testes de software para assegurar a estabilidade, usabilidade e ausência de falhas críticas no sistema;</li>
+                <li>Avaliar criticamente os resultados obtidos com o desenvolvimento do projeto, identificando impactos esperados e apontando direções para futuras melhorias evolutivas.</li>
+            </ul>
+
+            <h2>5 FUNDAMENTAÇÃO TEÓRICA</h2>
+            <p>O embasamento conceitual e prático deste projeto fundamenta-se nos pilares da Engenharia de Software, arquitetura de sistemas web modernos e modelagem de dados relacionais. Conforme postulam Pressman e Maxim (2016), a engenharia de software abrange um conjunto estruturado de processos, métodos gerenciais e ferramentas técnicas que permitem aos desenvolvedores construir softwares de alta qualidade, confiáveis e manuteníveis ao longo do tempo. No contexto de soluções web voltadas para o público escolar, a aplicação rigorosa desses conceitos assegura que o sistema seja escalável e adaptável a novas demandas institucionais.</p>
+            <p>Adicionalmente, o projeto incorpora conceitos fundamentais de Interação Humano-Computador (IHC), usabilidade e design responsivo. Autores da área de UI/UX reforçam que interfaces limpas, intuitivas e adaptáveis a diferentes tamanhos de tela (como celulares e computadores) são indispensáveis para garantir a inclusão digital e a aceitação da ferramenta pelos usuários. A adoção de padrões consolidados de desenvolvimento assegura que o sistema não apenas cumpra seus propósitos técnicos, mas proporcione uma experiência de uso agradável e sem barreiras.</p>
+
+            <h2>6 METODOLOGIA</h2>
+            <p>Para a consecução dos objetivos propostos, o projeto foi estruturado seguindo uma metodologia de desenvolvimento incremental e participativa, dividida em etapas cronológicas bem definidas. Inicialmente, realizou-se a fase de diagnóstico e levantamento de necessidades através da observação direta do cotidiano escolar e diálogo informal com a comunidade. Em seguida, procedeu-se com a revisão bibliográfica e a especificação detalhada dos requisitos do sistema.</p>
+            <p>Nas etapas subsequentes, o projeto avançou para a fase de prototipagem visual utilizando ferramentas de design colaborativo, seguida pela modelagem conceitual e lógica do banco de dados. O planejamento técnico contemplou a escolha de tecnologias acessíveis e consolidadas no mercado para a construção das interfaces e da lógica de negócios. Por fim, estruturou-se a etapa de testes de aceitação e validação funcional, culminando na análise consolidada dos resultados e na elaboração da documentação técnica final.</p>
+
+            <h2>7 ANÁLISE E LEVANTAMENTO DE REQUISITOS</h2>
+            <h3>7.1 Público-alvo</h3>
+            <p>O ecossistema da aplicação foi planejado para atender a três personas principais dentro do Centro Educa Mais Dom Ungarelli: <strong>Estudantes</strong>, que buscam recuperar pertences perdidos de forma rápida e autônoma; <strong>Pais ou Responsáveis</strong>, que acompanham eventuais perdas de materiais de alto valor; e <strong>Funcionários da Secretaria / Inspetores</strong>, que atuam como administradores do sistema, sendo responsáveis por cadastrar, validar, atualizar o status e efetivar a devolução dos itens encontrados nas dependências da instituição.</p>
+            
+            <h3>7.2 Requisitos funcionais</h3>
+            <table>
+                <tr><th>Código</th><th>Descrição do Requisito Funcional</th><th>Prioridade</th></tr>
+                <tr><td>RF01</td><td>O sistema deverá permitir o cadastro e autenticação de usuários com diferentes perfis de acesso (Comum e Administrador).</td><td>Alta</td></tr>
+                <tr><td>RF02</td><td>O sistema deverá permitir o registro detalhado de itens achados, incluindo nome, categoria, descrição física, data, local e foto opcional.</td><td>Alta</td></tr>
+                <tr><td>RF03</td><td>O sistema deverá permitir a consulta pública e filtragem avançada de itens cadastrados por categoria, data e status.</td><td>Alta</td></tr>
+                <tr><td>RF04</td><td>O sistema deverá permitir que administradores alterem o status dos itens (ex: 'Disponível', 'Reclamado', 'Devolvido').</td><td>Média</td></tr>
+                <tr><td>RF05</td><td>O sistema deverá permitir a geração de relatórios gerenciais e estatísticos sobre o fluxo de achados e perdidos na escola.</td><td>Baixa</td></tr>
+            </table>
+
+            <h3>7.3 Requisitos não funcionais</h3>
+            <ul>
+                <li><strong>RNF01 - Responsividade:</strong> O layout da aplicação web deverá adaptar-se perfeitamente a diferentes dispositivos (smartphones, tablets e desktops) utilizando técnicas de design responsivo.</li>
+                <li><strong>RNF02 - Usabilidade:</strong> A interface deve apresentar navegação intuitiva, com tempo de aprendizado mínimo para qualquer membro da comunidade escolar.</li>
+                <li><strong>RNF03 - Segurança:</strong> Os dados sensíveis dos usuários e registros de itens deverão ser armazenados com criptografia básica e proteção contra vulnerabilidades comuns (como SQL Injection).</li>
+                <li><strong>RNF04 - Compatibilidade:</strong> O sistema deverá ser totalmente compatível com todos os navegadores web modernos do mercado (Google Chrome, Mozilla Firefox, Microsoft Edge e Safari).</li>
+            </ul>
+
+            <h2>8 MODELAGEM E PROTOTIPAÇÃO</h2>
+            <p>Nesta fase do projeto, foram concebidos os wireframes de baixa e alta fidelidade para representar o fluxo visual das telas principais, incluindo a página de boas-vindas, o painel de listagem de itens perdidos, o formulário de cadastro de novos objetos e a área administrativa de controle. O fluxo de navegação foi desenhado para minimizar o número de cliques necessários até que o usuário encontre a informação desejada.</p>
+            <p>Paralelamente, realizou-se a modelagem conceitual do banco de dados relacional, estabelecendo as tabelas fundamentais: <code>usuarios</code> (armazenando dados cadastrais e credenciais), <code>categorias</code> (tipos de itens como eletrônicos, vestuário, material escolar) e <code>itens</code> (contendo chaves estrangeiras e descrições detalhadas de cada objeto recolhido). Essa estrutura garante integridade referencial e alta performance nas consultas.</p>
+
+            <h2>9 DESENVOLVIMENTO DA SOLUÇÃO WEB</h2>
+            <h3>9.1 Tecnologias utilizadas</h3>
+            <table>
+                <tr><th>Tecnologia / Ferramenta</th><th>Categoria</th><th>Finalidade no Projeto</th></tr>
+                <tr><td>HTML5 / CSS3 / JavaScript</td><td>Front-end</td><td>Estruturação semântica, estilização visual moderna e interatividade dinâmica das páginas.</td></tr>
+                <tr><td>PHP / MySQL</td><td>Back-end & Banco de Dados</td><td>Processamento da lógica de negócios do lado do servidor e persistência segura dos dados relacionais.</td></tr>
+                <tr><td>Figma / Git & GitHub</td><td>Suporte & Versionamento</td><td>Prototipagem interativa das interfaces e controle descentralizado de versão do código-fonte.</td></tr>
+            </table>
+            
+            <h3>9.2 Estrutura da aplicação</h3>
+            <p>A arquitetura de arquivos e pastas do projeto foi organizada seguindo o padrão estrutural limpo, separando os módulos de interface de usuário (arquivos de visualização e estilos) dos scripts de conexão com o banco de dados e regras de negócio do servidor. Essa organização facilita a manutenção evolutiva do código por futuras turmas do curso técnico.</p>
+            
+            <h3>9.3 Principais funcionalidades</h3>
+            <p>As funcionalidades implementadas entregam um fluxo completo de ponta a ponta: o inspetor ou funcionário que encontra um objeto na escola acessa o sistema, preenche o formulário de cadastro com foto e descrição; o estudante, ao perceber a falta de seu pertences, acessa a plataforma de seu smartphone, utiliza os filtros de busca e identifica o objeto, podendo solicitar a retirada diretamente na secretaria mediante comprovação.</p>
+
+            <h2>10 TESTES E RESULTADOS</h2>
+            <table>
+                <tr><th>ID Teste</th><th>Procedimento Executado</th><th>Resultado Esperado</th><th>Resultado Obtido</th><th>Status</th></tr>
+                <tr><td>TST-01</td><td>Submissão de credenciais válidas na tela de login.</td><td>Usuário autenticado com sucesso e redirecionado ao painel.</td><td>Autenticação bem-sucedida e redirecionamento correto.</td><td><strong style="color: green;">Aprovado</strong></td></tr>
+                <tr><td>TST-02</td><td>Preenchimento e envio do formulário de cadastro de novo item achado.</td><td>Registro inserido no banco de dados e exibido na listagem pública.</td><td>Item gravado perfeitamente e listado em tempo real.</td><td><strong style="color: green;">Aprovado</strong></td></tr>
+                <tr><td>TST-03</td><td>Execução de filtro por categoria na página de consulta de pertences.</td><td>Exibição restrita apenas aos itens pertencentes à categoria selecionada.</td><td>Filtro aplicado de forma ágil e precisa.</td><td><strong style="color: green;">Aprovado</strong></td></tr>
+            </table>
+            <p>A bateria de testes executada confirmou que o sistema atende plenamente aos requisitos especificados, demonstrando estabilidade, ausência de falhas críticas de execução e excelente tempo de resposta nas operações fundamentais.</p>
+
+            <h2>11 CONSIDERAÇÕES FINAIS</h2>
+            <p>O desenvolvimento deste projeto permitiu alcançar com absoluto êxito todos os objetivos gerais e específicos inicialmente propostos. A solução web desenvolvida para o Centro Educa Mais Dom Ungarelli soluciona de maneira definitiva a desorganização e a ineficácia histórica no controle de achados e perdidos na instituição, substituindo métodos manuais obsoletos por uma ferramenta digital moderna, transparente e acessível.</p>
+            <p>Como perspectivas para trabalhos futuros, sugere-se a implementação de um sistema de notificações automáticas via e-mail ou aplicativo de mensagens quando um item com características semelhantes for cadastrado, bem como a expansão da plataforma para integrar outras unidades de ensino da rede pública estadual.</p>
+
+            <h2>REFERÊNCIAS</h2>
+            <p style="text-indent: 0;">PRESSMAN, Roger S.; MAXIM, Bruce R. <strong>Engenharia de software: uma abordagem profissional</strong>. 8. ed. Porto Alegre: AMGH, 2016.</p>
+            <p style="text-indent: 0;">CENTRO EDUCA MAIS DOM UNGARELLI. <strong>Diretrizes de Projetos Web e Normas Acadêmicas</strong>. Pinheiro, MA: Portal Institucional, 2026.</p>
+        </div>
+    </div>
+
+    <script>
+        function mudarSecao(tipo) {
+            const botoes = document.querySelectorAll('.nav-doc button');
+            botoes.forEach(b => b.classList.remove('active'));
+            
+            if(tipo === 'tudo') {
+                document.getElementById('sec-capa').classList.add('active');
+                document.getElementById('sec-texto').classList.add('active');
+                event.target.classList.add('active');
+            } else if(tipo === 'capa') {
+                document.getElementById('sec-capa').classList.add('active');
+                document.getElementById('sec-texto').classList.remove('active');
+                event.target.classList.add('active');
+            } else if(tipo === 'texto') {
+                document.getElementById('sec-capa').classList.remove('active');
+                document.getElementById('sec-texto').classList.add('active');
+                event.target.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
